@@ -8,6 +8,5 @@ class app {
     include app::nginx
     include app::memcached
     include app::sshd
-#    include app::iptables
     include app::varnish
 }
