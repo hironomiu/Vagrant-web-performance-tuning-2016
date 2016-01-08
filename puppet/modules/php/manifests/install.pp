@@ -52,6 +52,7 @@ class php::install{
         'make',
         'dstat',
         'emacs',
+        'vim-enhanced',
         'telnet',
         'tree',
         'sysstat',
