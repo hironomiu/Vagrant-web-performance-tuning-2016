@@ -12,8 +12,14 @@ class php::install{
     }
 
     package{ 
+        'php':
+        provider => 'yum',
+        ensure => 'latest',
+        install_options => ['--enablerepo=remi,remi-php56'],
+        require => Package['remi-release']
+    }
+    package{ 
         [
-        'php',
         'php-cli',
         'php-common',
         'php-devel',
@@ -48,8 +54,8 @@ class php::install{
         ]:
         provider => 'yum',
         ensure => 'latest',
-        install_options => ['--enablerepo=remi,remi-php56'],
-        require => Package['remi-release']
+        install_options => ['--enablerepo=remi,remi-php56,epel'],
+        require => Package['php']
     }
 
    # package{
