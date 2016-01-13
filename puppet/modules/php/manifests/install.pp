@@ -23,16 +23,11 @@ class php::install{
         'php',
         'php-cli',
         'php-common',
-        'php-devel',
         'php-pdo',
-        'php-xml',
         'php-mbstring',
         'php-mysqlnd',
         'php-pecl-xdebug',
         'php-opcache',
-        'php-fpm',
-        'php-mcrypt',
-        'libmcrypt',
         ]:
         provider => 'yum',
         ensure => 'latest',
@@ -42,6 +37,11 @@ class php::install{
 
     package{
         [
+        'php-devel',
+        'php-fpm',
+        'php-xml',
+        'php-mcrypt',
+        'libmcrypt',
         'siege',
         'memcached',
         'php-pecl-memcached',
@@ -68,16 +68,11 @@ class php::install{
         'php',
         'php-cli',
         'php-common',
-        'php-devel',
         'php-pdo',
-        'php-xml',
         'php-mbstring',
         'php-mysqlnd',
         'php-pecl-xdebug',
-        'php-opcache',
-        'php-fpm',
-        'php-mcrypt',
-        'libmcrypt']
+        'php-opcache']
     }
 
     package{
