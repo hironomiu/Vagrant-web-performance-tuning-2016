@@ -28,7 +28,6 @@ class php::install{
         'php-xml',
         'php-mbstring',
         'php-mysqlnd',
-        'php-pecl-memcached',
         'php-pecl-xdebug',
         'php-opcache',
         'php-fpm',
@@ -45,6 +44,7 @@ class php::install{
         [
         'siege',
         'memcached',
+        'php-pecl-memcached',
         'openssh-clients',
         'wget',
         'git',
@@ -64,7 +64,20 @@ class php::install{
         provider => 'yum',
         ensure => latest,
         install_options => ['--enablerepo=remi'],
-        require => Package['remi-release']
+        require => Package[
+        'php',
+        'php-cli',
+        'php-common',
+        'php-devel',
+        'php-pdo',
+        'php-xml',
+        'php-mbstring',
+        'php-mysqlnd',
+        'php-pecl-xdebug',
+        'php-opcache',
+        'php-fpm',
+        'php-mcrypt',
+        'libmcrypt']
     }
 
     package{
