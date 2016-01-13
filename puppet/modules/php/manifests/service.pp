@@ -11,6 +11,12 @@ class php::service {
         hasrestart => true,
     }
 
+    service{ 'varnish':
+        enable => true,
+        ensure => running,
+        hasrestart => true,
+    }
+
     exec { "firewall-cmd" :
         user => 'root',
         cwd => '/root',

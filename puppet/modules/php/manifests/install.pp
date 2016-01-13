@@ -18,7 +18,25 @@ class php::install{
         require => Package['remi-release']
     }
 
-    package{ 
+   # package{ 
+   #     [
+   #     'php',
+   #     'php-cli',
+   #     'php-common',
+   #     'php-pdo',
+   #     'php-mbstring',
+   #     'php-mysqlnd',
+   #     'php-opcache',
+   #     'php-pecl-xdebug',
+   #     ]:
+   #     provider => 'yum',
+   #     ensure => 'latest',
+   #     install_options => ['--enablerepo=remi,remi-php56','--noplugins'],
+   #     # install_options => ['--enablerepo=remi,remi-php56','--disablerepo=base'],
+   #     require => Package['httpd']
+   # }
+
+    package{
         [
         'php',
         'php-cli',
@@ -28,16 +46,6 @@ class php::install{
         'php-mysqlnd',
         'php-opcache',
         'php-pecl-xdebug',
-        ]:
-        provider => 'yum',
-        ensure => 'latest',
-        install_options => ['--enablerepo=remi,remi-php56','--noplugins'],
-        # install_options => ['--enablerepo=remi,remi-php56','--disablerepo=base'],
-        require => Package['httpd']
-    }
-
-    package{
-        [
         'php-devel',
         'php-fpm',
         'php-xml',
@@ -61,19 +69,12 @@ class php::install{
         'perf',
         'cronie-noanacron',
         'npm',
+        'varnish',
         ]:
         provider => 'yum',
         ensure => latest,
         install_options => ['--enablerepo=remi,remi-php56,epel','--noplugins'],
-        require => Package[
-        'php',
-        'php-cli',
-        'php-common',
-        'php-pdo',
-        'php-mbstring',
-        'php-mysqlnd',
-        'php-opcache',
-        'php-pecl-xdebug']
+        require => Package['httpd']
     }
 
     package{

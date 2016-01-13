@@ -7,5 +7,4 @@ class app {
     include app::user-group
     include app::nginx
     include app::sshd
-    include app::varnish
 }
