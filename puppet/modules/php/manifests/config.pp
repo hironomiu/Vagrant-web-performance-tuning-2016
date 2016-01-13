@@ -11,4 +11,8 @@ class php::config {
         owner => 'root', group => 'root',
         content => template('php/httpd.conf'),
     }
+    file { "/etc/sysconfig/memcached":
+        owner => "root", group => "root",
+        content => template('php/memcached'),
+    }
 }

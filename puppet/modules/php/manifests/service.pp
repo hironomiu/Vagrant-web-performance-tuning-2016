@@ -5,6 +5,12 @@ class php::service {
         hasrestart => true,
     }
 
+    service{ 'memcached':
+        enable => true,
+        ensure => running,
+        hasrestart => true,
+    }
+
     exec { "firewall-cmd" :
         user => 'root',
         cwd => '/root',
