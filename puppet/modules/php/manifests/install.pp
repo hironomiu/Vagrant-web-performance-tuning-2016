@@ -26,17 +26,18 @@ class php::install{
         'php-pdo',
         'php-mbstring',
         'php-mysqlnd',
+        'php-opcache',
         'php-pecl-xdebug',
         ]:
         provider => 'yum',
         ensure => 'latest',
-        install_options => ['--enablerepo=remi,remi-php56','--disablerepo=base'],
+        install_options => ['--enablerepo=remi,remi-php56','--noplugins'],
+        # install_options => ['--enablerepo=remi,remi-php56','--disablerepo=base'],
         require => Package['httpd']
     }
 
     package{
         [
-        'php-opcache',
         'php-devel',
         'php-fpm',
         'php-xml',
@@ -71,6 +72,7 @@ class php::install{
         'php-pdo',
         'php-mbstring',
         'php-mysqlnd',
+        'php-opcache',
         'php-pecl-xdebug']
     }
 
