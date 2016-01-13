@@ -26,8 +26,8 @@ class php::install{
         'php-pdo',
         'php-mbstring',
         'php-mysqlnd',
-        'php-pecl-xdebug',
         'php-opcache',
+        'php-pecl-xdebug',
         ]:
         provider => 'yum',
         ensure => 'latest',
