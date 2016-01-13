@@ -63,7 +63,7 @@ class php::install{
         ]:
         provider => 'yum',
         ensure => latest,
-        install_options => ['--enablerepo=remi'],
+        install_options => ['--enablerepo=remi,remi-php56'],
         require => Package[
         'php',
         'php-cli',
