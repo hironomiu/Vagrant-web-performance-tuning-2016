@@ -26,7 +26,6 @@ class php::install{
         'php-pdo',
         'php-mbstring',
         'php-mysqlnd',
-        'php-opcache',
         'php-pecl-xdebug',
         ]:
         provider => 'yum',
@@ -37,6 +36,7 @@ class php::install{
 
     package{
         [
+        'php-opcache',
         'php-devel',
         'php-fpm',
         'php-xml',
@@ -71,8 +71,7 @@ class php::install{
         'php-pdo',
         'php-mbstring',
         'php-mysqlnd',
-        'php-pecl-xdebug',
-        'php-opcache']
+        'php-pecl-xdebug']
     }
 
     package{
