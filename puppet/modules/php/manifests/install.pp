@@ -12,11 +12,17 @@ class php::install{
     }
 
     package{ 
+        'httpd':
+        provider => 'yum',
+        ensure => 'latest',
+        require => Package['remi-release']
+    }
+    package{ 
         'php':
         provider => 'yum',
         ensure => 'latest',
         install_options => ['--enablerepo=remi,remi-php56','--disablerepo=base'],
-        require => Package['remi-release']
+        require => Package['httpd']
     }
     package{ 
         [
@@ -34,7 +40,6 @@ class php::install{
         'php-mcrypt',
         'libmcrypt',
         'siege',
-        'httpd',
         'memcached',
         'openssh-clients',
         'wget',
