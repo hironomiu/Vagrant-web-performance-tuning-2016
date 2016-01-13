@@ -30,15 +30,6 @@ class php::install{
         'siege',
         'httpd',
         'memcached',
-        ]:
-        provider => 'yum',
-        ensure => 'latest',
-        install_options => ['--enablerepo=remi,remi-php56'],
-        require => Package['remi-release']
-    }
-
-    package{
-        [
         'openssh-clients',
         'wget',
         'git',
@@ -56,9 +47,34 @@ class php::install{
         'npm',
         ]:
         provider => 'yum',
-        ensure => installed,
+        ensure => 'latest',
+        install_options => ['--enablerepo=remi,remi-php56'],
         require => Package['remi-release']
     }
+
+   # package{
+   #     [
+   #     'openssh-clients',
+   #     'wget',
+   #     'git',
+   #     'screen',
+   #     'unzip',
+   #     'make',
+   #     'dstat',
+   #     'emacs',
+   #     'vim-enhanced',
+   #     'telnet',
+   #     'tree',
+   #     'sysstat',
+   #     'perf',
+   #     'cronie-noanacron',
+   #     'npm',
+   #     ]:
+   #     provider => 'yum',
+   #     ensure => latest,
+   #     install_options => ['--enablerepo=remi,remi-php56'],
+   #     require => Package['remi-release']
+   # }
 
     package{
         [
