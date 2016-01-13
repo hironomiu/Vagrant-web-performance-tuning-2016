@@ -20,7 +20,7 @@ class php::install{
 
     package{ 
         [
-        'php':
+        'php',
         'php-cli',
         'php-common',
         'php-devel',
