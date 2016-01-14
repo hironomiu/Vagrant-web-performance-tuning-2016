@@ -3,7 +3,7 @@ class nginx::install{
     Class['php::config'] -> Class['nginx::install']
     yumrepo { 'nginx':
         descr => 'nginx yum repo',
-        baseurl => 'http://nginx.org/packages/centos/6/$basearch/',
+        baseurl => 'http://nginx.org/packages/centos/7/$basearch/',
         enabled    => 1,
         gpgcheck   => 0,
     }
