@@ -14,7 +14,8 @@ class mysql::install{
     package { 'mysql-community-release-el7-5.noarch.rpm':
         ensure   => installed,
         source   => 'http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm',
-        provider => rpm,
+        provider => 'rpm',
+        install_options => ['--nodeps'],
         require  => Package['perl-Data-Dumper'],
     }
 
