@@ -18,15 +18,29 @@ class php::install{
         require => Package['remi-release']
     }
 
+    package{ 
+        'php':
+        provider => 'yum',
+        ensure => 'latest',
+        install_options => ['--enablerepo=remi,remi-php56,epel','--noplugins'],
+        require => Package['httpd']
+    }
+
+    package{ 
+        'php-opcache':
+        provider => 'yum',
+        ensure => 'latest',
+        install_options => ['--enablerepo=remi,remi-php56,epel','--noplugins'],
+        require => Package['php']
+    }
+
     package{
         [
-        'php',
         'php-cli',
         'php-common',
         'php-pdo',
         'php-mbstring',
         'php-mysqlnd',
-        'php-opcache',
         'php-pecl-xdebug',
         'php-devel',
         'php-fpm',
@@ -56,7 +70,7 @@ class php::install{
         provider => 'yum',
         ensure => latest,
         install_options => ['--enablerepo=remi,remi-php56,epel','--noplugins'],
-        require => Package['httpd']
+        require => Package['php-opcache']
     }
 
     package{
