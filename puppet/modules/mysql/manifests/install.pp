@@ -11,7 +11,7 @@ class mysql::install{
         require => Package['mariadb-libs'],
     }
 
-    package { 'mysql-community-repo':
+    package { 'mysql-community-release-el7-5.noarch.rpm':
         ensure   => installed,
         source   => 'http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm',
         provider => rpm,
@@ -23,7 +23,7 @@ class mysql::install{
         provider => 'yum',
         ensure => installed,
         install_options => ['--enablerepo=mysql56-community','--noplugins'],
-        require => Package['mysql-community-repo'],
+        require => Package['mysql-community-release-el7-5.noarch.rpm'],
     }
 
 }
