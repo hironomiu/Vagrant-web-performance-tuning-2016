@@ -29,8 +29,8 @@ class php::install{
     package{ 
         'php-opcache':
         provider => 'yum',
-        ensure => 'latest',
-        install_options => ['--enablerepo=remi,remi-php56,epel','--noplugins'],
+        ensure => installed
+        install_options => ['--enablerepo=remi,remi-php56'],
         require => Package['php']
     }
 
