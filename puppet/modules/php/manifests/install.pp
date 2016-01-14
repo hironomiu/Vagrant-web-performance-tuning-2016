@@ -26,11 +26,12 @@ class php::install{
         require => Package['httpd']
     }
 
-    package{ 
-        'php-opcache':
-        provider => 'yum',
-        ensure => installed,
-        install_options => ['--enablerepo=remi,remi-php56'],
+    exec { "opcache" :
+        user => 'root',
+        cwd => '/root',
+        path => ['/usr/bin','/bin'],
+        command => "yum install -y --enablerepo=remi-php56 php-opcache",
+        timeout => 999,
         require => Package['php']
     }
 
@@ -70,7 +71,7 @@ class php::install{
         provider => 'yum',
         ensure => latest,
         install_options => ['--enablerepo=remi,remi-php56,epel','--noplugins'],
-        require => Package['php-opcache']
+        require => Exec['opcache']
     }
 
     package{
