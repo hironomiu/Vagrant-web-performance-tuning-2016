@@ -15,4 +15,10 @@ class php::config {
         owner => "root", group => "root",
         content => template('php/memcached'),
     }
+
+    file { "/etc/varnish/varnish.params":
+        owner => "root", group => "root",
+        content => template('php/varnish.params'),
+    }
+
 }
