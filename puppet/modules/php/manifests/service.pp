@@ -6,13 +6,13 @@ class php::service {
     }
 
     service{ 'memcached':
-        enable => true,
+        enable => false,
         ensure => running,
         hasrestart => true,
     }
 
     service{ 'varnish':
-        enable => true,
+        enable => false,
         ensure => running,
         hasrestart => true,
     }
