@@ -66,7 +66,6 @@ class php::install{
         'perf',
         'cronie-noanacron',
         'npm',
-        'varnish',
         'lsof',
         ]:
         provider => 'yum',
