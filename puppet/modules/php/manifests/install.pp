@@ -67,6 +67,7 @@ class php::install{
         'cronie-noanacron',
         'npm',
         'varnish',
+        'lsof',
         ]:
         provider => 'yum',
         ensure => latest,
