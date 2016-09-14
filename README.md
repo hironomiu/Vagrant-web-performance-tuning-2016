@@ -1,23 +1,34 @@
-# CentOS7環境
+# Vagrant-web-performance-tuning-2016環境
+
+## ベースOS
+CentOS7
 
 ## Install
 ```
-$ git clone git@github.com:hironomiu/Vagrant-CentOS7.git
-```
-or
-```
-$ git clone https://github.com/hironomiu/Vagrant-CentOS7.git
+$ git clone ~
+$ cd Vagrant-web-performance-tuning-2016
+$ vagrant up 
 ```
 
 ## Login
-vagrant user
+vagrant
+
 ```
 $ vagrant ssh
 ```
-sudoでrootに遷移可能
+
+root sudoでrootに遷移可能
+
 ```
 $ sudo su -
 ```
+
+demouser アプリケーションユーザ
+```
+$ vagrant ssh
+$ sudo su - demouser
+```
+
 ## JMeterの利用例
 demouserのホームディレクトリに配置
 ```
