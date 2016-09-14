@@ -18,4 +18,9 @@ sudoでrootに遷移可能
 ```
 $ sudo su -
 ```
+## JMeterの利用例
+demouserのホームディレクトリに配置
+```
+$ ~/apache-jmeter-3.0/bin/jmeter -n -t /vagrant/hoge.jmx
+```
 
