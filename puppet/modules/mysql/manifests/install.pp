@@ -23,7 +23,7 @@ class mysql::install{
         "mysql-community-server" :
         provider => 'yum',
         ensure => installed,
-        install_options => ['--noplugins','--enablerepo=mysql56-community'],
+        install_options => ['--noplugins',{'--enablerepoi' => 'mysql56-community'}],
         require => Package['mysql-community-release-el7-5.noarch.rpm'],
     }
 
