@@ -64,4 +64,25 @@ class user-group::config{
         timeout => 999,
         require => Exec['chmod']
     }
+
+    exec { "jmeter get" :
+        user => 'demouser',
+        path => ['/bin'],
+        command => "/bin/wget http://ftp.jaist.ac.jp/pub/apache//jmeter/binaries/apache-jmeter-3.0.tgz",
+        logoutput => on_failure,
+        cwd => "/home/demouser",
+        creates => "/home/demouser/apache-jmeter-3.0.tgz",
+        timeout => 999,
+        require => Exec['usermod apache']
+    }
+
+    exec { "jmeter tar" :
+        user => 'demouser',
+        path => ['/bin'],
+        command => "/bin/tar xvfz apache-jmeter-3.0.tgz",
+        logoutput => on_failure,
+        cwd => "/home/demouser",
+        timeout => 999,
+        require => Exec['jmeter get']
+    }
 }

@@ -67,6 +67,8 @@ class php::install{
         'cronie-noanacron',
         'npm',
         'lsof',
+        'redis',
+        'java-1.8.0-openjdk',
         ]:
         provider => 'yum',
         ensure => latest,

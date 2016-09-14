@@ -6,8 +6,14 @@ class php::service {
     }
 
     service{ 'memcached':
-        enable => false,
-        ensure => stopped,
+        enable => true,
+        ensure => running,
+        hasrestart => true,
+    }
+
+    service{ 'redis':
+        enable => true,
+        ensure => running,
         hasrestart => true,
     }
 
