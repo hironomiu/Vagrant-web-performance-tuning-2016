@@ -47,6 +47,7 @@ class php::install{
         'php-fpm',
         'php-xml',
         'php-mcrypt',
+        'php-pecl-redis',
         'libmcrypt',
         'siege',
         'memcached',
