@@ -10,6 +10,20 @@ $ cd Vagrant-web-performance-tuning-2016
 $ vagrant up 
 ```
 
+## ユーザ
+### OS
+|ユーザ|パスワード|
+|:-:|:-:|
+|root|puppet|
+|vagrant|vagrant|
+|demouser|demouser|
+
+### MySQL
+|ユーザ|パスワード|
+|:-:|:-:|
+|root|vagrant|
+|demouser|demopass|
+
 ## Login
 vagrant
 
@@ -17,7 +31,7 @@ vagrant
 $ vagrant ssh
 ```
 
-root sudoでrootに遷移可能
+vagrantからsudoでrootに遷移可能
 
 ```
 $ sudo su -
